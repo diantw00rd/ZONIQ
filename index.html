@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- ensures the site works properly on mobile by setting the viewport scale -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ntd outbreak predictor</title>
+
+  <!-- preconnect to google fonts for faster font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- load inter font in multiple weights (400, 600, 800) for use in headings and text -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- include leaflet map library css for rendering the interactive map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- link to local stylesheet for custom page styling -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- set favicon to show in browser tab -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <!-- full-page loading screen that displays while the app is initializing -->
+  <div id="loader" class="loader-bg">
+    <div class="loader-center">
+      <!-- animated loading orb (could be a spinner or pulse animation) -->
+      <div class="loader-orb"></div>
+      <!-- stylized text animation showing the name of the app -->
+      <div class="loader-text">
+        <span>N</span><span>T</span><span>D</span>
+        <span class="dot">.</span>
+        <span>P</span><span>R</span><span>E</span><span>D</span><span>I</span><span>C</span><span>T</span><span>O</span><span>R</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- fixed navigation bar at the top of the page -->
+  <header>
+    <div class="nav">
+      <!-- app logo image on the left -->
+      <img src="logo.svg" alt="ntd predictor logo" class="logo" />
+      <!-- name of the app displayed as text -->
+      <span class="brand">ntd outbreak predictor</span>
+      <!-- internal navigation links for scrolling to sections or visiting other pages -->
+      <nav>
+        <a href="#map-section">map</a>
+        <a href="#about">about</a>
+        <a href="how-it-works.html" class="howworks-btn">how it works</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- hero section with title, tagline, and call-to-action button -->
+  <section class="hero">
+    <!-- background visuals or color overlay -->
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <!-- main heading text with gradient styling -->
+      <h1>
+        <span class="gradient-text">redefining disease risk</span><br>
+        for a changing planet
+      </h1>
+      <!-- subheading and short description -->
+      <p>
+        <span class="big">ai-powered climate intelligence for global health.</span>
+        <br>
+        predict tomorrow’s ntd hotspots, before outbreaks happen.
+      </p>
+      <!-- button to scroll directly to the map section -->
+      <a href="#map-section" class="cta-button">explore the map</a>
+    </div>
+  </section>
+
+  <!-- informational section explaining the importance of the tool -->
+  <section class="features" id="about">
+    <!-- first main block of explanation text -->
+    <div class="feature">
+      <h2>why this matters</h2>
+      <p>
+        climate change is shifting disease boundaries at unprecedented speed. our platform integrates machine learning, real-time climate, and epidemiological data to forecast risk—empowering action before outbreaks.
+      </p>
+    </div>
+
+    <!-- feature cards explaining key capabilities of the platform -->
+    <div class="feature-cards">
+      <div class="card">
+        <h3>climate intelligence</h3>
+        <p>integrates regional climate projections and ntd case data for year-by-year risk mapping.</p>
+      </div>
+      <div class="card">
+        <h3>actionable science</h3>
+        <p>pinpoint future hotspots, guide interventions, and allocate resources before crises hit.</p>
+      </div>
+      <div class="card">
+        <h3>open & transparent</h3>
+        <p>transparent methods, open data, and reproducible results for public health impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- interactive map and controls for exploring predictions -->
+  <section class="map-section" id="map-section">
+    <h2>interactive ntd risk map</h2>
+
+    <!-- control bar for search and dropdown filters -->
+    <div class="controls">
+      <!-- search input with autocomplete for countries -->
+      <div class="search-autocomplete-group">
+        <input type="text" id="search" placeholder="search country..." autocomplete="off" />
+        <ul id="autocomplete-list" class="autocomplete-items"></ul>
+      </div>
+
+      <!-- dropdown to select year (options added dynamically in js) -->
+      <select id="year"></select>
+
+      <!-- dropdown to select disease type -->
+      <select id="disease">
+        <option value="lym">lymphatic filariasis</option>
+        <option value="onc">onchocerciasis</option>
+        <option value="sch">schistosomiasis</option>
+        <option value="soi">soil-transmitted helminthiases</option>
+        <option value="tra">trachoma</option>
+      </select>
+    </div>
+
+    <!-- div that will contain the leaflet map -->
+    <div id="map"></div>
+
+    <!-- map legend showing what the colors mean -->
+    <div id="legend" class="legend"></div>
+
+    <!-- info box that pops up with more details when a region is clicked -->
+    <div id="info-box" class="hidden" tabindex="0">
+      <!-- button to close the info box -->
+      <button id="close-info" aria-label="close info box">×</button>
+      <!-- content inside the box is populated dynamically -->
+      <div id="info-content"></div>
+    </div>
+  </section>
+
+  <!-- section introducing the creators of the project -->
+  <section class="about-team" id="team">
+    <div class="team-info">
+      <h2>our team</h2>
+      <p>
+        built by toronto project group 3: students reimagining global health for the climate era.
+      </p>
+      <!-- contact and source code links -->
+      <ul>
+        <li><strong>contact:</strong> <a href="mailto:ntdproject@example.com">ntdproject@example.com</a></li>
+        <li><strong>github:</strong> <a href="https://github.com/your-repo" target="_blank" rel="noopener">project repository</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- footer with copyright -->
+  <footer>
+    <p>© 2025 toronto project group 3. all rights reserved.</p>
+  </footer>
+
+  <!-- load leaflet js library for map functionality -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- load main javascript logic for interactivity and map behavior -->
+  <script src="script.js"></script>
+
+  <!-- script for fading out the loader once the page finishes loading -->
+  <script>
+    window.addEventListener('load', function() {
+      // wait a bit before starting fadeout
+      setTimeout(() => {
+        // add fadeout animation class
+        document.getElementById('loader').classList.add('fadeout');
+        // fully hide the loader after the fadeout completes
+        setTimeout(() => document.getElementById('loader').style.display = 'none', 700);
+      }, 1100);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>how it works | ntd outbreak predictor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body class="hiw-body">
+  <header>
+    <div class="nav">
+      <img src="logo.svg" alt="ntd predictor logo" class="logo" />
+      <span class="brand">ntd outbreak predictor</span>
+      <nav>
+        <a href="index.html#map-section">map</a>
+        <a href="index.html#about">about</a>
+        <a href="how-it-works.html" class="active">how it works</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="hiw-main">
+    <section class="hiw-hero">
+      <h1 class="hiw-title">how it works</h1>
+      <p class="hiw-subtitle">
+        setting a new benchmark in climate-informed disease forecasting.<br />
+        discover how we transform global environmental and health data into timely, actionable predictions.
+      </p>
+    </section>
+
+    <section class="hiw-flow">
+      <div class="hiw-anim">
+        <!-- animated data flow visualization -->
+        <svg viewBox="0 0 700 200" width="100%" height="200">
+          <!-- data sources -->
+          <g>
+            <circle cx="90" cy="70" r="38" fill="#00ffd0" opacity="0.18" />
+            <circle cx="90" cy="70" r="26" fill="#00ffd0" opacity="0.7" />
+            <text x="90" y="75" text-anchor="middle" fill="#00ffd0" font-size="1.1em" font-weight="700" font-family="inter">climate</text>
+          </g>
+          <g>
+            <circle cx="90" cy="150" r="18" fill="#7ee8fa" opacity="0.8" />
+            <text x="90" y="155" text-anchor="middle" fill="#00ffd0" font-size="0.9em" font-weight="700" font-family="inter">health</text>
+          </g>
+          <g>
+            <circle cx="90" cy="120" r="18" fill="#eec0c6" opacity="0.8" />
+            <text x="90" y="125" text-anchor="middle" fill="#00ffd0" font-size="0.9em" font-weight="700" font-family="inter">population</text>
+          </g>
+          <!-- animated flowing lines -->
+          <path id="flow1" d="m130,70 c90,0 90,30 180,30" fill="none" stroke="#00ffd0" stroke-width="7" opacity="0.5" />
+          <path id="flow2" d="m110,150 c110,0 110,-50 200,-50" fill="none" stroke="#7ee8fa" stroke-width="5" opacity="0.5" />
+          <path id="flow3" d="m110,120 c110,0 110,-20 200,-20" fill="none" stroke="#eec0c6" stroke-width="5" opacity="0.5" />
+          <!-- animated moving dots on lines -->
+          <circle r="10" fill="#00ffd0">
+            <animateMotion dur="1.5s" repeatCount="indefinite">
+              <mpath xlink:href="#flow1" />
+            </animateMotion>
+          </circle>
+          <circle r="7" fill="#7ee8fa">
+            <animateMotion dur="1.7s" repeatCount="indefinite">
+              <mpath xlink:href="#flow2" />
+            </animateMotion>
+          </circle>
+          <circle r="7" fill="#eec0c6">
+            <animateMotion dur="1.9s" repeatCount="indefinite">
+              <mpath xlink:href="#flow3" />
+            </animateMotion>
+          </circle>
+          <!-- ai model node -->
+          <g>
+            <rect x="310" y="70" width="100" height="60" rx="24" fill="#181f2b" stroke="#00ffd0" stroke-width="4" />
+            <text x="360" y="106" text-anchor="middle" fill="#00ffd0" font-size="1.3em" font-weight="800" font-family="inter">ai model</text>
+          </g>
+          <!-- output arrow -->
+          <path id="outflow" d="m410,100 c90,0 90,0 180,0" fill="none" stroke="#00ffd0" stroke-width="7" opacity="0.5" />
+          <circle r="13" fill="#00ffd0">
+            <animateMotion dur="1.4s" repeatCount="indefinite">
+              <mpath xlink:href="#outflow" />
+            </animateMotion>
+          </circle>
+          <!-- output: map -->
+          <g>
+            <rect x="590" y="70" width="90" height="60" rx="18" fill="#1c2533" stroke="#00ffd0" stroke-width="3" />
+            <text x="635" y="105" text-anchor="middle" fill="#7ee8fa" font-size="1.2em" font-weight="700" font-family="inter">map</text>
+            <circle cx="610" cy="100" r="8" fill="#00ffd0" opacity="0.7" />
+            <circle cx="670" cy="90" r="6" fill="#eec0c6" opacity="0.8" />
+            <circle cx="650" cy="120" r="7" fill="#7ee8fa" opacity="0.6" />
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="hiw-steps">
+      <div class="hiw-step">
+        <div class="hiw-step-num">1</div>
+        <div>
+          <h2>data integration</h2>
+          <p>we aggregate diverse datasets including global climate projections, real-time meteorological observations, historical ntd incidence reports, and regional population density metrics.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-step-num">2</div>
+        <div>
+          <h2>machine learning predictions</h2>
+          <p>our advanced predictive models analyze integrated data streams to estimate outbreak risks under varying climate scenarios, continuously improving with new data.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-step-num">3</div>
+        <div>
+          <h2>interactive exploration</h2>
+          <p>users can dynamically visualize predicted risk distributions by disease, year, and location, accessing granular projections and temporal trends for informed decision-making.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="hiw-cta">
+      <a href="index.html#map-section" class="cta-button">try the interactive map</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 toronto project group 3. all rights reserved.</p>
+  </footer>
+</body>
+</html>
