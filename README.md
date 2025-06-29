@@ -1,5 +1,6 @@
 
 # 🌍 Zoniq: redefining disease risk for a changing planet
+Built as part of the AI4Good Lab – Toronto Cohort (2025), Team 3 Project
 
 **AI-powered climate intelligence for global health**
 Predict tomorrow’s Neglected Tropical Disease (NTD) hotspots **before outbreaks happen.**
@@ -32,14 +33,14 @@ Our live platform showcases:
 
 A detailed Jupyter Notebook containing:
 
-* 📊 Benchmarked models:
+*  Benchmarked models:
 
   * Logistic Regression
   * Random Forest
   * XGBoost
   * PCA 
-* 🏁 Performance metrics (precision, recall, F1)
-* 📂 Data inputs and generated reports
+*  Performance metrics (precision, recall, F1)
+*  Data inputs and generated reports
 
 ## Model Benchmarks
 
