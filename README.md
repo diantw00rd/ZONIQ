@@ -7,7 +7,7 @@ Predict tomorrow’s Neglected Tropical Disease (NTD) hotspots **before outbreak
 
 🚀 [Explore the Deployed Website](https://diantw00rd.github.io/ZONIQ/)
 
-## 🔍 Why Zoniq Matters
+## 🔍 Why Zoniq matters
 
 Climate change is accelerating the emergence and migration of diseases - reshaping boundaries faster than traditional public health systems can adapt.
 
@@ -19,7 +19,7 @@ Climate change is accelerating the emergence and migration of diseases - reshapi
 
 Together, these power a platform that **anticipates NTD risks before outbreaks**, enabling timely interventions and data-driven public health strategy.
 
-## 🌐 Website Highlights
+## 🌐 Website highlights
 
 Our live platform showcases:
 
@@ -27,7 +27,30 @@ Our live platform showcases:
 * 📈 XGBoost-driven forecasts grounded in climate and disease data
 * 🌎 Expansion plans to model disease risk **worldwide**
 
-## 📁 Project Structure
+## 📁 Project structure
+
+### Nigeria_2014-2025.csv
+Cleaned and merged dataset containing:
+
+* Town-level health, population, and climate attributes
+
+* Used as the input foundation for all model training and visualization
+
+### data_report.pdf
+Summary of:
+
+* Data cleaning and transformation
+
+* Feature engineering methodology
+
+* Justification for variable selection and modeling decisions
+
+### zoniq_pitch_deck.pptx
+Final presentation deck delivered for:
+
+🧠 AI4Good Lab – Toronto Demo Day
+
+💡 Project background, motivation, methodology, and impact vision
 
 ### `xgboost.ipynb`
 
